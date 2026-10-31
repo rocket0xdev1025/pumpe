@@ -1,6 +1,6 @@
 /* ===== CONFIG ===== */
 const CONFIG = {
-  CA: 'TBA',
+  CA: '0xb200000000000000000000a873a273d0b513dc01',
   CHAIN: 'base',
   X: 'https://x.com/pumpe_base',
   TG: ''
@@ -25,7 +25,7 @@ const CONFIG = {
   /* ===== Links & CA ===== */
   const validCA = () => CA_RE.test(CONFIG.CA);
   function links() {
-    const ca = validCA() ? CONFIG.CA : 'TBA';
+    const ca = validCA() ? CONFIG.CA : '0xb200000000000000000000a873a273d0b513dc01';
     return {
       buy: 'https://app.uniswap.org/swap?chain=' + CONFIG.CHAIN + '&outputCurrency=' + ca,
       chart: 'https://dexscreener.com/' + CONFIG.CHAIN + '/' + ca,
@@ -39,7 +39,7 @@ const CONFIG = {
       const k = a.getAttribute('data-link');
       if (L[k]) a.setAttribute('href', L[k]); else a.removeAttribute('href');
     });
-    $$('[data-ca]').forEach(el => { el.textContent = validCA() ? CONFIG.CA : 'TBA'; });
+    $$('[data-ca]').forEach(el => { el.textContent = validCA() ? CONFIG.CA : '0xb200000000000000000000a873a273d0b513dc01'; });
     const frame = $('#dexFrame'), ov = $('#tvOverlay');
     if (validCA()) {
       const src = 'https://dexscreener.com/base/' + CONFIG.CA + '?embed=1&theme=dark&trades=0&info=0';
@@ -62,12 +62,12 @@ const CONFIG = {
     ta.remove(); return ok;
   }
   $$('[data-copy]').forEach(b => b.addEventListener('click', async () => {
-    const text = validCA() ? CONFIG.CA : 'TBA';
+    const text = validCA() ? CONFIG.CA : '0xb200000000000000000000a873a273d0b513dc01';
     let ok = false;
     try { if (navigator.clipboard && window.isSecureContext) { await navigator.clipboard.writeText(text); ok = true; } } catch (e) {}
     if (!ok) ok = fallbackCopy(text);
     window.__lastCopied = text;
-    if (!validCA()) say('CA is TBA. Check our X for launch.');
+    if (!validCA()) say('CA is 0xb200000000000000000000a873a273d0b513dc01. Check our X for launch.');
     else say(ok ? 'CA copied. Treat secured.' : 'Copy failed. Select it manually.');
   }));
 
