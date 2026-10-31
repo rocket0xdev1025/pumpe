@@ -2,8 +2,7 @@
 const CONFIG = {
   CA: '0xb200000000000000000000a873a273d0b513dc01',
   CHAIN: 'base',
-  X: 'https://x.com/pumpe_base',
-  TG: ''
+  X: 'https://x.com/pumpe_base'
 };
 
 (function () {
@@ -29,8 +28,7 @@ const CONFIG = {
     return {
       buy: 'https://app.uniswap.org/swap?chain=' + CONFIG.CHAIN + '&outputCurrency=' + ca,
       chart: 'https://dexscreener.com/' + CONFIG.CHAIN + '/' + ca,
-      x: CONFIG.X,
-      tg: CONFIG.TG
+      x: CONFIG.X
     };
   }
   function applyConfig() {
